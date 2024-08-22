@@ -11,14 +11,23 @@ html, body {
   /*
   min-height: 100vh;
   */
+  margin: 0;
 }
 
 .main-content-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  row-gap: 10vh;
+  flex-direction: column;
   flex-wrap: wrap;
+}
+
+.sub-content-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10vh;
 }
 
 a {
