@@ -9,24 +9,24 @@
 </head>
 
 <body>
+  <div class="inner-cursor"></div>
+  <div class="outer-cursor"></div>
+
   <div class="main-content-page">
     <div class="sub-content-page">
       <div class="header">
         <div>
           <h1 class="title">therealkiri</h1>
-          <h4 class="description" onclick="descriptionPostIt()">a python and c developer</h4>
-          <a href="">
-            <span id="description-post-it" style="opacity: 0;">i also tinker with web dev. sometimes.</span>
-          </a> <!-- redirect to skills -->
+          <h4 class="description">a python and c developer</h4>
         </div>
       </div>
-    
+
       <div class="navbar">
         <nav>
-          <a href="">about</a> <!-- include goals, classes -->
-          <a href="">projects</a>
-          <a href="">skills</a>
-          <a href="">contact</a>
+          <a href="" onmouseover="linkCursor()" onmouseleave="linkCursorLeave()">about</a> <!-- include goals, classes -->
+          <a href="" onmouseover="linkCursor()" onmouseleave="linkCursorLeave()">projects</a>
+          <a href="" onmouseover="linkCursor()" onmouseleave="linkCursorLeave()">skills</a>
+          <a href="" onmouseover="linkCursor()" onmouseleave="linkCursorLeave()">contact</a>
         </nav>
       </div>
     </div>
@@ -37,14 +37,56 @@
   </div>
 
   <script src="script.js"></script>
+  <script 
+    src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
   <script>
-    function descriptionPostIt() {
-      let descriptionPostIt = document.getElementById('description-post-it');
-      if (descriptionPostIt.style.opacity === "0") {
-        descriptionPostIt.style.opacity = "1";
-      } else {
-        descriptionPostIt.style.opacity = "0";
-      }
+    $(window).ready(function () {
+      let mouseX = 0;
+      let mouseY = 0;
+      let xp = 0;
+      let yp = 0;
+
+      $(document).mousemove(function (e) {
+        $(".inner-cursor").css({
+          transform: 'translate(' + (e.clientX - 3.25) + 'px, ' + (e.clientY - 3.25) + 'px)'
+        });
+
+        mouseX = e.clientX - 10;
+        mouseY = e.clientY - 10;
+      });
+
+      setInterval(function () {
+        xp += ((mouseX - xp) / 6);
+        yp += ((mouseY - yp) / 6);
+        $(".outer-cursor").css({
+          transform: 'translateX(' + (xp - 15) + 'px) translateY(' + (yp - 15) + 'px)'
+        });
+      }, 10);
+    })
+
+    function linkCursor() {
+      $(".outer-cursor").css({
+        width: '67px',
+        height: '67px',
+        opacity: '1'
+      });
+      $(".inner-cursor").css({
+        display: 'none',
+        transition: '0.5s'
+      });
+    };
+
+    function linkCursorLeave() {
+      $(".outer-cursor").css({
+        width: '50px',
+        height: '50px',
+        opacity: '0.4'
+      });
+      $(".inner-cursor").css({
+        display: 'block',
+        transition: 'height .3s cubic-bezier(0.46,0.03,0.52,0.96), width .3s cubic-bezier(0.46,0.03,0.52,0.96)'
+      })
     }
   </script>
 </body>

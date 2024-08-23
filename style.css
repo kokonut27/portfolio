@@ -2,6 +2,13 @@
 
 * {
   box-sizing: border-box;
+  cursor: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    cursor: default;
+  }
 }
 
 html, body {
@@ -36,6 +43,36 @@ a {
 }
 
 /*
+--- cursor styles
+*/
+
+.inner-cursor {
+  height: 7.5px;
+  width: 7.5px;
+  position: fixed;
+  transform: translate(0px, 0px);
+  background-color: #000;
+  border-radius: 50%;
+  transition: height .3s cubic-bezier(0.46,0.03,0.52,0.96), width .3s cubic-bezier(0.46,0.03,0.52,0.96);
+  z-index: 5000;
+  pointer-events: none;
+}
+
+.outer-cursor {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 0.1em solid #000;
+  background-color: transparent;
+  position: fixed;
+  z-index: 5000;
+  transform: translate(0px, 0px);
+  pointer-events: none;
+  opacity: 0.4;
+  transition: 0.1s;
+}
+
+/*
 --- top header styles ---
 */
 
@@ -57,10 +94,6 @@ a {
   padding-bottom: 5%;
 }
 
-.header h4:hover {
-  cursor: pointer;
-}
-
 @keyframes zoom {
   0% {transform: scale(0);}
   15% {transform: scale(0.25);}
@@ -72,20 +105,6 @@ a {
   100% {transform: scale(1);}
 }
 
-#description-post-it {
-  font-size: 70%;
-  padding: 5px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border: 0.1em solid #000;
-  box-shadow: 5px 5px;
-  transition: 0.2s;
-  animation: 1s linear zoom;
-}
-
-#description-post-it:hover {
-  cursor: default;
-}
 
 /*
 --- navigation bar styles
