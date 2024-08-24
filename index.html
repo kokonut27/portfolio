@@ -23,10 +23,14 @@
 
       <div class="navbar">
         <nav>
-          <a href="" onmouseover="linkCursor()" onmouseleave="linkCursorLeave()">about</a> <!-- include goals, classes -->
-          <a href="" onmouseover="linkCursor()" onmouseleave="linkCursorLeave()">projects</a>
-          <a href="" onmouseover="linkCursor()" onmouseleave="linkCursorLeave()">skills</a>
-          <a href="" onmouseover="linkCursor()" onmouseleave="linkCursorLeave()">contact</a>
+          <a href="" id="nav1" 
+            onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">about</a> <!-- include goals, classes -->
+          <a href="" id="nav2" 
+            onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">projects</a>
+          <a href="" id="nav3"
+            onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">skills</a>
+          <a href="" id="nav4"
+            onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">contact</a>
         </nav>
       </div>
     </div>
@@ -65,27 +69,29 @@
       }, 10);
     })
 
-    function linkCursor() {
+    function linkCursor(element) {
       $(".outer-cursor").css({
-        width: '67px',
-        height: '67px',
-        opacity: '1'
+        display: 'none'
       });
       $(".inner-cursor").css({
         display: 'none',
         transition: '0.5s'
       });
+      $(".navbar nav a:nth-child(" + (element.id.slice(3)) + ")").css({
+        background: '#CCC'
+      });
     };
 
     function linkCursorLeave() {
       $(".outer-cursor").css({
-        width: '50px',
-        height: '50px',
-        opacity: '0.4'
+        display: 'block'
       });
       $(".inner-cursor").css({
         display: 'block',
         transition: 'height .3s cubic-bezier(0.46,0.03,0.52,0.96), width .3s cubic-bezier(0.46,0.03,0.52,0.96)'
+      });
+      $(".navbar nav a").css({
+        background: '#FFF'
       })
     }
   </script>
