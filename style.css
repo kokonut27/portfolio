@@ -89,20 +89,13 @@ a {
 
 .header h4 {
   margin-top: 0;
-  font-style: italic;
   font-size: 90%;
-  padding-bottom: 5%;
+  margin-bottom: 0;
 }
 
-@keyframes zoom {
-  0% {transform: scale(0);}
-  15% {transform: scale(0.25);}
-  30% {transform: scale(0.5);}
-  45% {transform: scale(0.75);}
-  60% {transform: scale(1);}
-  75% {transform: scale(1.25);}
-  85% {transform: scale(1.4);}
-  100% {transform: scale(1);}
+.header h6 {
+  margin-top: 0;
+  padding-bottom: 5%;
 }
 
 
@@ -132,6 +125,47 @@ nav {
 .navbar nav a:hover {
   box-shadow: 7px 7px;
   transform: translate(-7px, -7px);
+}
+
+/*
+popup page styles
+*/
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page div {
+  z-index: 10;
+  width: 40%;
+  border: 0.1em solid #000;
+  display: none;
+  padding: 5%;
+}
+
+@media (max-width: 800px) {
+  .page div {
+    width: 80%;
+    height: 70%;
+  }
+}
+
+.page h2 {
+  margin-left: 5%;
+}
+
+.page .close {
+  float: right;
+  margin-right: 5%;
+  font-size: 150%;
+  transition: 0.5s;
+}
+
+.page .close:hover {
+  opacity: 0.8;
 }
 
 /*

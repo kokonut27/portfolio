@@ -17,13 +17,25 @@
       <div class="header">
         <div>
           <h1 class="title">therealkiri</h1>
-          <h4 class="description">a python and c developer</h4>
+          <h4>a python and c developer</h4>
+          <h6>and sometimes web dev 🙃</h6>
         </div>
       </div>
 
+      <div class="page">
+        <div class="about">
+          <span class="close" id="close1" onclick="closeButton(this)" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">&times;</span>
+          <h2>about me</h2>
+          <p>i am a python and c developer who likes to tinker in all sorts of programming fields. specifically, i'm interested in how programming languages function, and replicate or create new models of languages. i dabble with website development at times, but it's not exactly my forte and oftentimes avoid it 😅</p>
+        </div>
+        <div class="projects"></div>
+        <div class="skills"></div>
+        <div class="contact"></div>
+      </div>
+
       <div class="navbar">
-        <nav>
-          <a href="" id="nav1" 
+        <nav> <!-- one idea for a new page is to make it pop up between the header and navbar like a menu/card and has the content -->
+          <a onclick="navLink(this)" id="nav1" 
             onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">about</a> <!-- include goals, classes -->
           <a href="" id="nav2" 
             onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">projects</a>
@@ -70,22 +82,41 @@
     })
 
     function linkCursor(element) {
-      $(".outer-cursor").css({
-        display: 'none'
-      });
-      $(".inner-cursor").css({
-        display: 'none',
-        transition: '0.5s'
-      });
-      $(".navbar nav a:nth-child(" + (element.id.slice(3)) + ")").css({
-        background: '#e5e5e5',
-        'box-shadow': 'inset 0 0 15px rgba(135, 135, 135, .1), 0 0 18px 3px rgba(0, 0, 0, .3), 7px 7px'
-      });
+      if (element.id.includes('nav')) {
+        $(".outer-cursor").css({
+          display: 'none'
+        });
+        $(".inner-cursor").css({
+          display: 'none',
+          transition: '0.5s'
+        });
+        $(".navbar nav a:nth-child(" + (element.id.slice(3)) + ")").css({
+          background: '#e5e5e5',
+          'box-shadow': 'inset 0 0 15px rgba(135, 135, 135, .1), 0 0 18px 3px rgba(0, 0, 0, .3), 7px 7px'
+        });
+      }; 
+      if (element.id.includes('close')) {
+        $(".inner-cursor").css({
+          display: 'none',
+          transition: '0.5s'
+        });
+        $(".outer-cursor").css({
+          width: '60px',
+          height: '60px',
+          filter: 'blur(4px)'
+        });
+        $('.page .close').css({
+          transform: 'rotate(-90deg)'
+        });
+      }
     };
 
     function linkCursorLeave() {
       $(".outer-cursor").css({
-        display: 'block'
+        display: 'block',
+        width: '50px',
+        height: '50px',
+        filter: 'none'
       });
       $(".inner-cursor").css({
         display: 'block',
@@ -94,7 +125,21 @@
       $(".navbar nav a").css({
         background: '#FFF',
         'box-shadow': 'none'
-      })
+      });
+      $('.page .close').css({
+        transform: 'rotate(90deg)'
+      });
+    };
+
+    function navLink(element) {
+      let page = element.id.slice(3);
+      let pageQuery = $(".page div:nth-child(" + page + ")")
+      pageQuery.delay(100).slideDown("easeInOutQuart");
+    };
+
+    function closeButton(element) {
+      let pageQuery = $('.page div:nth-child(' + element.id.slice(5) + ')')
+      pageQuery.delay(100).slideUp("easeInOutQuart");
     }
   </script>
 </body>
