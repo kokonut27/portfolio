@@ -134,7 +134,11 @@
     function navLink(element) {
       let page = element.id.slice(3);
       let pageQuery = $(".page div:nth-child(" + page + ")")
-      pageQuery.delay(100).slideDown("easeInOutQuart");
+      if (pageQuery.css('display') != 'none') {
+        pageQuery.delay(100).slideUp("easeInOutQuart");
+      } else {
+        pageQuery.delay(100).slideDown("easeInOutQuart");
+      };
     };
 
     function closeButton(element) {
