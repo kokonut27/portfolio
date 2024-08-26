@@ -142,15 +142,15 @@
       let pageQuery = $(".page div:nth-child(" + page + ")")
       const elementQuery = document.querySelector('.page div:nth-child(' + page + ')')
       if (pageQuery.css('display') != 'none') {
-        // pageQuery.delay(100).slideUp("easeInOutQuart");
-        elementQuery.classList.add('animate__animated', 'animate__bounceOutUp');
-        console.log('hi')
+        pageQuery.delay(100).slideUp("easeInOutQuart");
+        // elementQuery.classList.add('animate__animated', 'animate__bounceOutUp');
+        // console.log('hi')
       } else {
-        // pageQuery.delay(100).slideDown("easeInOutQuart");
-        elementQuery.classList.add('animate__animated', 'animate__bounceInDown');
-        console.log('hello')
+        pageQuery.delay(100).slideDown("easeInOutQuart");
+        // elementQuery.classList.add('animate__animated', 'animate__bounceInDown');
+        // console.log('hello')
       };
-      console.log(elementQuery.classList)
+      // console.log(elementQuery.classList)
     };
 
     function closeButton(element) {
