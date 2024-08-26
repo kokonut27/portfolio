@@ -6,11 +6,17 @@
   <meta name="viewport" content="width=device-width">
   <title>therealkiri</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 
 <body>
   <div class="inner-cursor"></div>
   <div class="outer-cursor"></div>
+
+  <!-- eventually make light/dark mode -->
 
   <div class="main-content-page">
     <div class="sub-content-page">
@@ -134,11 +140,17 @@
     function navLink(element) {
       let page = element.id.slice(3);
       let pageQuery = $(".page div:nth-child(" + page + ")")
+      const elementQuery = document.querySelector('.page div:nth-child(' + page + ')')
       if (pageQuery.css('display') != 'none') {
-        pageQuery.delay(100).slideUp("easeInOutQuart");
+        // pageQuery.delay(100).slideUp("easeInOutQuart");
+        elementQuery.classList.add('animate__animated', 'animate__bounceOutUp');
+        console.log('hi')
       } else {
-        pageQuery.delay(100).slideDown("easeInOutQuart");
+        // pageQuery.delay(100).slideDown("easeInOutQuart");
+        elementQuery.classList.add('animate__animated', 'animate__bounceInDown');
+        console.log('hello')
       };
+      console.log(elementQuery.classList)
     };
 
     function closeButton(element) {
