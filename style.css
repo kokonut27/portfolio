@@ -148,7 +148,7 @@ popup page styles
   padding: 5%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .page .page-popup {
     width: 80%;
     height: 70%;
@@ -156,12 +156,12 @@ popup page styles
 }
 
 .page h2 {
-  margin-left: 10%;
+  margin-left: 0.7em
 }
 
 .page .close {
   float: right;
-  margin-right: 5%;
+  margin-right: 0.7em;
   font-size: 150%;
   transition: 0.5s;
 }
