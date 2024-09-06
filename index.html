@@ -39,31 +39,36 @@
           <span class="close" id="close2" onclick="closeButton(this)" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">&times;</span>
           <h2>projects</h2>
           <div class="projects-box">
-            <div class="project-box">
-              <h3>portfolio</h3>
-              <p>this website! created using html, js, css and jquery.</p> <!-- add links -->
-              <span class="languages">
-                <img src="media/python.png" alt="python logo"/>
-              </span>
-              <span class="links">
-                <a id="link1" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/portfolio/">GitHub</a>
-                <a id="link2" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://therealkiri.vercel.app/">Website</a>  
-              </span>
+            <div class="project-box" id="project" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
+              <div class="inner-project-box" id="box1" onclick="projectPopUp(this)">
+                <div class="front">
+                  <h3>portfolio</h3>
+                  <p>this website! features my (future) resume, projects, and contacts. created using html, js, css and jquery.</p>
+                </div>
+                <div class="back">
+                  <span class="languages">
+                    <img src="media/python.png"/>
+                  </span>
+                  <span class="links">
+                    <a id="link1" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/portfolio/">GitHub</a>
+                    <a id="link2" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://therealkiri.vercel.app/">Website</a>  
+                  </span>
+                </div>
+              </div>
             </div>
-            <div class="project-box">
+            <div class="project-box" id="project" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>laboratory website</h3>
               <p>a laboratory website featuring the lab's research, goals, as well as the members of it. created using html, js, and css.</p>
             </div>
-            <div class="project-box">
+            <div class="project-box" id="project" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>python to c transpiler [wip]</h3>
               <p>a transpiler constructed to translate python source code to c source code. created using python.</p>
             </div>
-            <div class="project-box">
+            <div class="project-box" id="project" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>and much more!</h3>
-              <p>see more on my <a href="https://github.com/kokonut27">github page.</a></p>
+              <p>see more on my <a class="text-link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27">github page.</a></p>
             </div>
           </div>
-          <!-- have 4 boxes in a box -->
         </div>
         <div class="skills page-popup"></div>
         <div class="contact page-popup"></div>
@@ -84,7 +89,7 @@
     </div>
 
     <div class="bottom">
-      <h5>&copy 2024 therealkiri</h5>
+      <h5>&copy 2024-2025 therealkiri</h5>
     </div>
   </div>
 
@@ -93,6 +98,7 @@
     src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
   <script>
+    var front = true;
     $(window).ready(function () {
       let mouseX = 0;
       let mouseY = 0;
@@ -145,18 +151,17 @@
           transform: 'rotate(-90deg)'
         });
       };
-      if (element.id.includes('link')) {
+      if (element.id.includes('project')) {
         $(".outer-cursor").css({
-          display: 'none'
+          width: '30px',
+          height: '30px',
+          filter: 'blur(4px)',
+          opacity: '1'
         });
         $(".inner-cursor").css({
           display: 'none',
           transition: '0.5s'
         });
-        $(".page .projects #link" + (element.id.slice(4))).css({
-          'text-decoration': 'underline'
-        })
-        // make link either grow bigger or show underline when hovered.
       }
     };
 
@@ -178,9 +183,6 @@
       $('.page .close').css({
         transform: 'rotate(90deg)'
       });
-      $(".page .projects .links a").css({
-        'text-decoration': 'none'
-      })
     };
 
     function navLink(element) {
@@ -212,6 +214,21 @@
       let pageQuery = $('.page .page-popup:nth-child(' + element.id.slice(5) + ')')
       pageQuery.delay(100).slideUp("easeInOutQuart")
     };
+
+    function projectPopUp(element) {
+      pageQuery = $(".page .project-box:nth-child(" + (element.id.slice(3)) + ") .inner-project-box")
+      if (front === true) {
+        pageQuery.css({
+          transform: 'rotateY(180deg)'
+        });
+        front = false;
+      } else {
+        pageQuery.css({
+          transform: 'rotateY(360deg)'
+        });
+        front = true;
+      }
+    }
   </script>
 </body>
 

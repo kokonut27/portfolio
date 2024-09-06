@@ -74,6 +74,15 @@ a {
   transition: 0.1s;
 }
 
+@media (max-width: 480px) {
+  .inner-cursor {
+    display: none;
+  }
+  .outer-cursor {
+    display: none;
+  }
+}
+
 /*
 --- top header styles ---
 */
@@ -156,12 +165,14 @@ popup page styles
 }
 
 .page h2 {
-  margin-left: 0.7em
+  margin-left: 1.75em;
+  padding-bottom: 5%;
 }
 
 .page .close {
   float: right;
-  margin-right: 0.7em;
+  margin-right: 1em;
+  margin-left: 0.1em;
   font-size: 150%;
   transition: 0.5s;
 }
@@ -182,12 +193,33 @@ popup page styles
   padding: 5%;
   width: 45%;
   margin-bottom: 5%;
+  transition: 0.2s;
+  perspective: 1000px;
+}
+
+.page .projects .projects-box .project-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px;
 }
 
 @media (max-width: 800px) {
   .page .projects .projects-box .project-box {
     width: 85%;
   }
+}
+
+.page .projects .projects-box .project-box .inner-project-box {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.project-box .back, .project-box .front {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.page .projects .projects-box .project-box .back {
+  transform: rotateY(180deg);
 }
 
 .page .projects .languages img {
@@ -197,6 +229,62 @@ popup page styles
   background-color: #ccc;
   border-radius: 5px;
   vertical-align: middle;
+}
+
+.text-link {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  color: #000;
+}
+
+.text-link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+.text-link:hover::before {
+  transform: scaleX(1);
+}
+
+.links a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #000;
+}
+
+.links a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+.links a:hover::before {
+  transform: scaleX(1);
 }
 
 /*
