@@ -194,6 +194,13 @@
           i++;
         };
         if ($('.page .page-popup:nth-child(' + i + ')').css('display') != 'none') {
+          setTimeout(function() {
+            newPageQuery = $('.page .project-box .inner-project-box')
+            newPageQuery.css({
+              transform: 'rotateY(360deg)'
+            });
+            front = true;
+          }, 1000);
           $('.page .page-popup:nth-child(' + i + ')').delay(100).slideUp("easeInOutQuart");
           break;
         };
@@ -213,6 +220,15 @@
     function closeButton(element) {
       let pageQuery = $('.page .page-popup:nth-child(' + element.id.slice(5) + ')')
       pageQuery.delay(100).slideUp("easeInOutQuart")
+      setTimeout(function() {
+        if (element.id.slice(5) === '2') {
+          newPageQuery = $('.page .project-box .inner-project-box')
+          newPageQuery.css({
+            transform: 'rotateY(360deg)'
+          });
+          front = true;
+        }
+      }, 2000);
     };
 
     function projectPopUp(element) {
