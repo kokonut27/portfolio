@@ -214,12 +214,31 @@ popup page styles
 }
 
 .project-box .back, .project-box .front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
 .page .projects .projects-box .project-box .back {
   transform: rotateY(180deg);
+}
+
+.page .languages h5 {
+  margin-bottom: 0;
+}
+
+.page .languages div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .page .projects .languages img {
@@ -229,6 +248,11 @@ popup page styles
   background-color: #ccc;
   border-radius: 5px;
   vertical-align: middle;
+  transition: 0.1s;
+}
+
+.page .languages img:hover {
+  transform: scale(1.5);
 }
 
 .text-link {

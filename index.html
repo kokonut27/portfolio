@@ -47,11 +47,13 @@
                 </div>
                 <div class="back">
                   <span class="languages">
-                    Tools and Languages used:
-                    <img src="media/html.png"/>
-                    <img src="media/javascript.png"/>
-                    <img src="media/css.svg"/>
-                    <img src="media/jquery.png"/>
+                    <h5>Tools and Languages used:</h5>
+                    <div>
+                      <img src="media/html.png"/>
+                      <img src="media/javascript.png"/>
+                      <img src="media/css.svg"/>
+                      <img src="media/jquery.png"/>
+                    </div>
                   </span>
                   <span class="links">
                     <a id="link1" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/portfolio/">GitHub</a>
@@ -157,8 +159,6 @@
       };
       if (element.id.includes('project')) {
         $(".outer-cursor").css({
-          width: '30px',
-          height: '30px',
           filter: 'blur(4px)',
           opacity: '1'
         });
@@ -238,11 +238,13 @@
     function projectPopUp(element) {
       pageQuery = $(".page .project-box:nth-child(" + (element.id.slice(3)) + ") .inner-project-box")
       if (front === true) {
+        console.log('hi')
         pageQuery.css({
           transform: 'rotateY(180deg)'
         });
         front = false;
       } else {
+        console.log('hello')
         pageQuery.css({
           transform: 'rotateY(360deg)'
         });
