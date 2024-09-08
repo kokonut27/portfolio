@@ -39,8 +39,8 @@
           <span class="close" id="close2" onclick="closeButton(this)" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">&times;</span>
           <h2>projects</h2>
           <div class="projects-box">
-            <div class="project-box" id="project" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
-              <div class="inner-project-box" id="box1" onclick="projectPopUp(this)">
+            <div class="project-box" id="box1" onclick="projectPopUp(this)" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
+              <div class="inner-project-box">
                 <div class="front">
                   <h3>portfolio</h3>
                   <p>this website! features my (future) resume, projects, and contacts. created using html, js, css and jquery.</p>
@@ -62,15 +62,15 @@
                 </div>
               </div>
             </div>
-            <div class="project-box" id="project" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
+            <div class="project-box" id="box2" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>laboratory website</h3>
               <p>a laboratory website featuring the lab's research, goals, as well as the members of it. created using html, js, and css.</p>
             </div>
-            <div class="project-box" id="project" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
+            <div class="project-box" id="box3" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>python to c transpiler [wip]</h3>
               <p>a transpiler constructed to translate python source code to c source code. created using python.</p>
             </div>
-            <div class="project-box" id="project" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
+            <div class="project-box" id="box4" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>and much more!</h3>
               <p>see more on my <a class="text-link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27">github page.</a></p>
             </div>
@@ -157,7 +157,7 @@
           transform: 'rotate(-90deg)'
         });
       };
-      if (element.id.includes('project')) {
+      if (element.id.includes('box')) {
         $(".outer-cursor").css({
           filter: 'blur(4px)',
           opacity: '1'
