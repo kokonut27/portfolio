@@ -193,7 +193,7 @@ popup page styles
   padding: 5%;
   width: 45%;
   margin-bottom: 5%;
-  transition: 0.2s;
+  transition: 0.05s;
   perspective: 1000px;
 }
 
@@ -208,25 +208,6 @@ popup page styles
   }
 }
 
-.page .projects .projects-box .project-box .inner-project-box {
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.project-box .back, .project-box .front {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.page .projects .projects-box .project-box .back {
-  transform: rotateY(180deg);
-}
 
 .page .languages h5 {
   margin-bottom: 0;
@@ -235,10 +216,11 @@ popup page styles
 .page .languages div {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 10%;
   align-items: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .page .projects .languages img {
@@ -287,6 +269,7 @@ popup page styles
   position: relative;
   color: #000;
   text-decoration: none;
+  font-size: 90%;
 }
 
 .links a:hover {

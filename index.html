@@ -34,43 +34,62 @@
           <span class="close" id="close1" onclick="closeButton(this)" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">&times;</span>
           <h2>about me</h2>
           <p>i am a python and c developer who likes to tinker in all sorts of programming fields. specifically, i'm interested in how programming languages function, and replicate or create new models of languages. i dabble with website development at times, but it's not exactly my forte and oftentimes avoid it 😅</p>
+          <p>as a hobby, i enjoy programming (obviously), reading, gaming, and playing sports. recently, i've been interested in running and also enjoy playing basketball with friends and family. my favorite book genre tends to be sci-fi or fantasy fiction - which other people seem to be a bit controversial towards...</p>
         </div>
         <div class="projects page-popup">
           <span class="close" id="close2" onclick="closeButton(this)" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">&times;</span>
           <h2>projects</h2>
           <div class="projects-box">
-            <div class="project-box" id="box1" onclick="projectPopUp(this)" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
-              <div class="inner-project-box">
-                <div class="front">
-                  <h3>portfolio</h3>
-                  <p>this website! features my (future) resume, projects, and contacts. created using html, js, css and jquery.</p>
+            <div class="project-box" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
+              <h3>portfolio</h3>
+              <p>this website! features my (future) resume, projects, and contacts.</p>
+              <hr/>
+              <span class="languages">
+                <h5>Tools and Languages used:</h5>
+                <div>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="media/html.png"/></a>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="media/javascript.png"/></a>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="media/css.svg"/></a>
+                  <a href="https://jquery.com/"><img src="media/jquery.png"/></a>
                 </div>
-                <div class="back">
-                  <span class="languages">
-                    <h5>Tools and Languages used:</h5>
-                    <div>
-                      <img src="media/html.png"/>
-                      <img src="media/javascript.png"/>
-                      <img src="media/css.svg"/>
-                      <img src="media/jquery.png"/>
-                    </div>
-                  </span>
-                  <span class="links">
-                    <a id="link1" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/portfolio/">GitHub</a>
-                    <a id="link2" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://therealkiri.vercel.app/">Website</a>  
-                  </span>
-                </div>
-              </div>
+              </span>
+              <span class="links">
+                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/portfolio/">GitHub</a>
+                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://therealkiri.vercel.app/">Website</a>  
+              </span>
             </div>
-            <div class="project-box" id="box2" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
+            <div class="project-box" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>laboratory website</h3>
-              <p>a laboratory website featuring the lab's research, goals, as well as the members of it. created using html, js, and css.</p>
+              <p>a laboratory website featuring the lab's research, goals, as well as the members of it.</p>
+              <hr/>
+              <span class="languages">
+                <h5>Tools and Languages used:</h5>
+                <div>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="media/html.png"/></a>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="media/javascript.png"/></a>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="media/css.svg"/></a>
+                </div>
+              </span>
+              <span class="links">
+                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/kokonut27.github.io/">GitHub</a>
+                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://www.kim-laboratory.com/">Website</a>  
+              </span>
             </div>
-            <div class="project-box" id="box3" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
+            <div class="project-box" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>python to c transpiler [wip]</h3>
-              <p>a transpiler constructed to translate python source code to c source code. created using python.</p>
+              <p>a transpiler constructed to translate python source code to c source code.</p>
+              <hr/>
+              <span class="languages">
+                <h5>Tools and Languages used:</h5>
+                <div>
+                  <a href="https://www.python.org/doc/"><img src="media/python.png"></a>
+                </div>
+              </span>
+              <span class="links">
+                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/python-to-c-transpiler">GitHub</a>
+              </span>
             </div>
-            <div class="project-box" id="box4" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
+            <div class="project-box" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>and much more!</h3>
               <p>see more on my <a class="text-link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27">github page.</a></p>
             </div>
@@ -198,13 +217,6 @@
           i++;
         };
         if ($('.page .page-popup:nth-child(' + i + ')').css('display') != 'none') {
-          setTimeout(function() {
-            newPageQuery = $('.page .project-box .inner-project-box')
-            newPageQuery.css({
-              transform: 'rotateY(360deg)'
-            });
-            front = true;
-          }, 1000);
           $('.page .page-popup:nth-child(' + i + ')').delay(100).slideUp("easeInOutQuart");
           break;
         };
@@ -224,33 +236,7 @@
     function closeButton(element) {
       let pageQuery = $('.page .page-popup:nth-child(' + element.id.slice(5) + ')')
       pageQuery.delay(100).slideUp("easeInOutQuart")
-      setTimeout(function() {
-        if (element.id.slice(5) === '2') {
-          newPageQuery = $('.page .project-box .inner-project-box')
-          newPageQuery.css({
-            transform: 'rotateY(360deg)'
-          });
-          front = true;
-        }
-      }, 2000);
     };
-
-    function projectPopUp(element) {
-      pageQuery = $(".page .project-box:nth-child(" + (element.id.slice(3)) + ") .inner-project-box")
-      if (front === true) {
-        console.log('hi')
-        pageQuery.css({
-          transform: 'rotateY(180deg)'
-        });
-        front = false;
-      } else {
-        console.log('hello')
-        pageQuery.css({
-          transform: 'rotateY(360deg)'
-        });
-        front = true;
-      }
-    }
   </script>
 </body>
 
