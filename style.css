@@ -208,12 +208,11 @@ popup page styles
   }
 }
 
-
 .page .languages h5 {
   margin-bottom: 0;
 }
 
-.page .languages div {
+.page .languages div, .contact-logos {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -223,7 +222,7 @@ popup page styles
   margin-bottom: 10%;
 }
 
-.page .projects .languages img {
+.page .projects .languages img, .contact-logos img {
   width: 1.25em;
   height: 1.25em;
   border: 0.1em solid transparent;
@@ -233,7 +232,7 @@ popup page styles
   transition: 0.1s;
 }
 
-.page .languages img:hover {
+.page .languages img:hover, .contact-logos img:hover {
   transform: scale(1.5);
 }
 
