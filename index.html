@@ -47,15 +47,15 @@
               <span class="languages">
                 <h5>Tools and Languages used:</h5>
                 <div>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="media/html.png"/></a>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="media/javascript.png"/></a>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="media/css.svg"/></a>
-                  <a href="https://jquery.com/"><img src="media/jquery.png"/></a>
+                  <a id="lang" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="media/html.png"/></a>
+                  <a id="lang" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="media/javascript.png"/></a>
+                  <a id="lang" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="media/css.svg"/></a>
+                  <a id="lang" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://jquery.com/"><img src="media/jquery.png"/></a>
                 </div>
               </span>
               <span class="links">
-                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/portfolio/">GitHub</a>
-                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://therealkiri.vercel.app/">Website</a>  
+                <a id="link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/portfolio/">GitHub</a>
+                <a id="link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://therealkiri.vercel.app/">Website</a>  
               </span>
             </div>
             <div class="project-box" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
@@ -65,14 +65,14 @@
               <span class="languages">
                 <h5>Tools and Languages used:</h5>
                 <div>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="media/html.png"/></a>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="media/javascript.png"/></a>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="media/css.svg"/></a>
+                  <a id="lang" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="media/html.png"/></a>
+                  <a id="lang" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="media/javascript.png"/></a>
+                  <a id="lang" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="media/css.svg"/></a>
                 </div>
               </span>
               <span class="links">
-                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/kokonut27.github.io/">GitHub</a>
-                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://www.kim-laboratory.com/">Website</a>  
+                <a id="link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/kokonut27.github.io/">GitHub</a>
+                <a id="link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://www.kim-laboratory.com/">Website</a>  
               </span>
             </div>
             <div class="project-box" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
@@ -82,16 +82,16 @@
               <span class="languages">
                 <h5>Tools and Languages used:</h5>
                 <div>
-                  <a href="https://www.python.org/doc/"><img src="media/python.png"></a>
+                  <a id="lang" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://www.python.org/doc/"><img src="media/python.png"></a>
                 </div>
               </span>
               <span class="links">
-                <a onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/python-to-c-transpiler">GitHub</a>
+                <a id="link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27/python-to-c-transpiler">GitHub</a>
               </span>
             </div>
             <div class="project-box" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">
               <h3>and much more!</h3>
-              <p>see more on my <a class="text-link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27">github page.</a></p>
+              <p>see more on my <a id="link" class="text-link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" href="https://github.com/kokonut27">github page.</a></p>
             </div>
           </div>
         </div>
@@ -99,10 +99,27 @@
           <!-- make a bar that fills up to percentage of how "good" i am at each tech/language -->
         </div>
         <div class="contact page-popup">
+          <span class="close" id="close4" onclick="closeButton(this)" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">&times;</span>
           <h2>contact</h2>
-          <p>feel free to shoot me an email @ <a class="links text-link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()">beol0127 at gmail.com</a></p>
           <div class="contact-logos">
-            <img src="media/discord.png"/>
+            <a id="link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" class="logo">
+              <img src="media/discord.png"/>
+              <span>
+                therealkiri_
+              </span>
+            </a>
+            <a id="link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" class="logo">
+              <img src="media/gmail.png"/>
+              <span>
+                beol0127 at gmail.com
+              </span>
+            </a>
+            <a href="https://github.com/kokonut27" id="link" onmouseover="linkCursor(this)" onmouseleave="linkCursorLeave()" class="logo">
+              <img src="media/github.png"/>
+              <span>
+                kokonut27
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -188,6 +205,15 @@
         $(".outer-cursor").css({
           filter: 'blur(4px)',
           opacity: '1'
+        });
+        $(".inner-cursor").css({
+          display: 'none',
+          transition: '0.5s'
+        });
+      };
+      if (element.id.includes('lang') || element.id.includes('link')) {
+        $(".outer-cursor").css({
+          display: 'none'
         });
         $(".inner-cursor").css({
           display: 'none',

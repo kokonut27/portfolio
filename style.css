@@ -222,7 +222,7 @@ popup page styles
   margin-bottom: 10%;
 }
 
-.page .projects .languages img, .contact-logos img {
+.page .projects .languages img {
   width: 1.25em;
   height: 1.25em;
   border: 0.1em solid transparent;
@@ -232,8 +232,37 @@ popup page styles
   transition: 0.1s;
 }
 
-.page .languages img:hover, .contact-logos img:hover {
+.page .languages img:hover, .contact-logos .logo:hover {
   transform: scale(1.5);
+}
+
+.contact-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.contact-logos img {
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 5px;
+}
+
+.contact-logos .logo {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  height: 1.25em;
+  border: 0.1em solid transparent;
+  background-color: #ccc;
+  border-radius: 5px;
+  transition: 0.1s;
+  padding-right: 5%;
+}
+
+.contact-logos .logo span {
+  padding-left: 5%;
 }
 
 .text-link {
