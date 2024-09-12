@@ -212,7 +212,7 @@ popup page styles
   margin-bottom: 0;
 }
 
-.page .languages div, .contact-logos {
+.page .languages div {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -239,8 +239,9 @@ popup page styles
 .contact-logos {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
+  justify-content: center;
+  gap: 5%;
+  width: 100%;
 }
 
 .contact-logos img {
@@ -253,12 +254,13 @@ popup page styles
   display: flex;
   align-items: center;
   gap: 5%;
+  width: 115%;
   height: 1.25em;
   border: 0.1em solid transparent;
   background-color: #ccc;
   border-radius: 5px;
   transition: 0.1s;
-  padding-right: 5%;
+  font-size: 80%;
 }
 
 .contact-logos .logo span {
