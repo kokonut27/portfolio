@@ -147,6 +147,7 @@ popup page styles
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .page .page-popup {
@@ -191,7 +192,7 @@ popup page styles
 .page .projects .projects-box .project-box {
   border: 0.1em solid #000;
   padding: 5%;
-  width: 45%;
+  width: 47%;
   margin-bottom: 5%;
   transition: 0.05s;
   perspective: 1000px;
